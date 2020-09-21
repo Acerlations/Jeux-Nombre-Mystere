@@ -27,7 +27,7 @@ def demander(mini, max, nb_essais_restants): # Fonction demande le nombre mystè
     return x
   else:
     afficher("[ERREUR] MET UN NOMBRE | RELANCEMENT DU JEUX") 
-    jouer(1,100,10) # Relance le programme car le joueur a mis autre choses qu'un nombre
+    jouer(1,100,5) # Relance le programme car le joueur a mis autre choses qu'un nombre
 
 def resultat(proposition ,mystere, essais): # Fonction de fin 
   if proposition == mystere : # Vérifie que sa proposition est égale au nombre mystère 
@@ -50,4 +50,4 @@ def jouer(mini, max, nb_essais_restants): # Fonction principale
     messageindice(proposition, mystere, nb_essais_restants) # Affiche le message d'indice
   resultat(proposition, mystere, essais) # Un fois en dehors de la boucle la fonction resultat est appelé
 
-jouer(1,100,3) # Appelle la fonction jouer 
+jouer(1,100,5) # Appelle la fonction jouer. a = 1 et b = 100 dans randint(a,b) et 5 le nombre essais possible
