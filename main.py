@@ -22,7 +22,7 @@ def demander(mini, max, nb_essais_restants): # Fonction demande le nombre mystè
   x = input("Quel est le mystere ? : ")
   if x.isdigit(): # Vérifie si le joueur a mis un nombre
     x = int(x)
-    if x > max or x < mini: # Vérifie si le joueur a mis un nombre entre mini et max qui la valeur a et b dans randint(a,b) qui sera défini dans la ligne 53
+    if x > max or x < mini: # Vérifie si le joueur a mis un nombre entre mini et max qui correspond aux valeurs a et b dans randint(a,b) qui sera défini dans la ligne 53
       afficher(f"Met un resulet compris entre {mini} et {max}")
     return x
   else:
