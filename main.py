@@ -27,7 +27,7 @@ def demander(mini, max, nb_essais_restants): # Fonction demande le nombre mystè
     return x
   else:
     afficher("[ERREUR] MET UN NOMBRE | RELANCEMENT DU JEUX") 
-    jouer(1,100,5) # Relance le programme car le joueur a mis autre choses qu'un nombre
+    jouer(mini, max, nb_essais_restants) # Relance le programme car le joueur a mis autre choses qu'un nombre
 
 def resultat(proposition ,mystere, essais): # Fonction de fin 
   if proposition == mystere : # Vérifie que sa proposition est égale au nombre mystère 
@@ -42,7 +42,7 @@ def jouer(mini, max, nb_essais_restants): # Fonction principale
   mystere = int(randint(mini,max)) # Arritbution de la variable mystère a l'aide de la fonction randint
   proposition = str()
   afficher(f"Bienvenue dans le jeu du nombre mystère ! Tu dois deviner un nombre ou un chiffre compris entre {mini} et {max}, à toi de jouer !") # Message explicative
-  while proposition != mystere and nb_essais_restants > 0 : # Boucle qui ne tant cessera tant que le nombre mystère et le nombre donné par le joueur sont differant et que nombre d'essais et inferieur a 0
+  while proposition != mystere and nb_essais_restants > 0 : # Boucle qui cessera tant que le nombre mystère et le nombre donné par le joueur sont differant et que nombre d'essais et inferieur a 0
     nb_essais_restants -= 1 # On enleve -1 au nombre essais
     proposition = demander(mini, max, nb_essais_restants) # Attribution de la variable proposition à l'aide de la fonction demander
     essais.append(proposition) # Ajoute le nombre donné par le joueur dans la liste essais
