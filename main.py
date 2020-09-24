@@ -27,7 +27,7 @@ def demander(mini, max, nb_essais_restants):  # Fonction demande le nombre myst√
             return demander(mini, max, nb_essais_restants)
         return demande
     else:
-        afficher("Merci de mettre un nombre/chiffre")
+        afficher("Merci de mettre un entier")
         return demander(mini, max, nb_essais_restants)
 
 def resultat(proposition, mystere, essais):  # Fonction de fin
@@ -51,4 +51,4 @@ def jouer(mini, max, nb_essais_restants):  # Fonction principale
         messageindice(proposition, mystere, nb_essais_restants) # Affiche le message d'indice
     resultat(proposition, mystere, essais)  # Un fois en dehors de la boucle la fonction resultat est appel√©
 
-jouer(1, 100, 5)  # Appelle la fonction jouer. a = 1 et b = 100 dans randint(a,b) et 5 le nombre essais possible
+jouer(1, 100, 5)  # Appelle la fonction jouer. a = 1 et b = 100 dans randint(a,b) et 5 le nombre d'essais possible
