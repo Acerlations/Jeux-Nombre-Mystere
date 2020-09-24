@@ -23,10 +23,10 @@ def demander(mini, max, nb_essais_restants): # Fonction demande le nombre mystè
   if x.isdigit(): # Vérifie si le joueur a mis un nombre
     x = int(x)
     if x > max or x < mini: # Vérifie si le joueur a mis un nombre entre mini et max qui correspond aux valeurs a et b dans randint(a,b) qui sera défini dans la ligne 53
-      afficher(f"Met un resulet compris entre {mini} et {max}")
+      afficher(f"Mets un resultat compris entre {mini} et {max}")
     return x
   else:
-    afficher("[ERREUR] MET UN NOMBRE | RELANCEMENT DU JEUX") 
+    afficher("[ERREUR] MET UN NOMBRE") 
     jouer(mini, max, nb_essais_restants) # Relance le programme car le joueur a mis autre choses qu'un nombre
 
 def resultat(proposition ,mystere, essais): # Fonction de fin 
@@ -46,7 +46,7 @@ def jouer(mini, max, nb_essais_restants): # Fonction principale
     nb_essais_restants -= 1 # On enleve -1 au nombre essais
     proposition = demander(mini, max, nb_essais_restants) # Attribution de la variable proposition à l'aide de la fonction demander
     essais.append(proposition) # Ajoute le nombre donné par le joueur dans la liste essais
-    # afficher(f"{mystere}, {proposition}") # Afficher le nombre mystère et le nombre donné par le joueur pour debug s'il y a un problème
+    # afficher(f"{mystere}, {proposition}") # Afficher le nombre mystère et le nombre donné par le joueur pour debug s'il y à un problème
     messageindice(proposition, mystere, nb_essais_restants) # Affiche le message d'indice
   resultat(proposition, mystere, essais) # Un fois en dehors de la boucle la fonction resultat est appelé
 
