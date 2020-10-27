@@ -1,8 +1,8 @@
 from random import randint  # Importe la fonction radint qui met un nombre aleatoire entre deux valeurs ex : randint(a,b)
 
 def messageindice(proposition, mystere, nb_essais_restants):  # Fonction aidant le joueur à trouver le nombre mystère
-    if proposition < mystere:  # Verifie si le nombre donné par le joueur et plus petit que le nombre mystère
-        difference = mystere - proposition  # Calcule la différence entre le nombre mystère et le nombre donné par le joueur. En faisant une soustraction
+    if proposition < mystere:  
+        difference = mystere - proposition  
         if difference > 20:  # Vérifie si la différence est plus grande que 20 et affiche Trop bas pour mieux aider le joueur sinon s'il affiche "Plus"
             afficher(f"Trop Bas | Encore {nb_essais_restants} essai(s)")
         else:
@@ -30,25 +30,25 @@ def demander(mini, max, nb_essais_restants):  # Fonction demande le nombre myst�
         afficher("Merci de mettre un entier")
         return demander(mini, max, nb_essais_restants)
 
-def resultat(proposition, mystere, essais):  # Fonction de fin
-    if proposition == mystere:  # Vérifie que sa proposition est égale au nombre mystère
+def resultat(proposition, mystere, essais):  
+    if proposition == mystere:  
         afficher("BRAVOOO !!! Voici tes essais :")
-    elif proposition != mystere:  # Vérifie que sa proposition est différente au nombre mystère
+    elif proposition != mystere:  
         afficher("Perdu :( Voici tes essais :")
-    print(*essais, sep=", ")  # Affiche tout les essais qui ont étaient enregistrés
+    print(*essais, sep=", ")  
     afficher(f"Le chiffe mystere était {mystere}")
 
-def jouer(mini, max, nb_essais_restants):  # Fonction principale
+def jouer(mini, max, nb_essais_restants):  
     essais = []  # Liste qui va enregistrer tous les essais
-    mystere = int(randint(mini, max))  # Arritbution de la variable mystère a l'aide de la fonction randint
+    mystere = int(randint(mini, max))  
     proposition = int()
-    afficher(f"Bienvenue dans le jeu du nombre mystère ! Tu dois deviner un nombre ou un chiffre compris entre {mini} et {max}, à toi de jouer !")  # Message explicative
-    while proposition != mystere and nb_essais_restants > 0:  # Boucle qui cessera tant que le nombre mystère et le nombre donné par le joueur sont differant et que nombre d'essais et inferieur a 0
-        nb_essais_restants -= 1  # On enleve -1 au nombre essais
-        proposition = demander(mini, max,nb_essais_restants)  # Attribution de la variable proposition à l'aide de la fonction demander
-        essais.append(proposition) # Ajoute le nombre donné par le joueur dans la liste essais
+    afficher(f"Bienvenue dans le jeu du nombre mystère ! Tu dois deviner un nombre ou un chiffre compris entre {mini} et {max}, à toi de jouer !") 
+    while proposition != mystere and nb_essais_restants > 0: 
+        nb_essais_restants -= 1 
+        proposition = demander(mini, max,nb_essais_restants)  
+        essais.append(proposition) 
         # afficher( f"{mystere}, {proposition}, {mini}, {max}, {nb_essais_restants}")  # Afficher le nombre mystère et le nombre donné par le joueur pour debug s'il y à un problème
-        messageindice(proposition, mystere, nb_essais_restants) # Affiche le message d'indice
-    resultat(proposition, mystere, essais)  # Un fois en dehors de la boucle la fonction resultat est appelé
+        messageindice(proposition, mystere, nb_essais_restants) 
+    resultat(proposition, mystere, essais)  
 
-jouer(1, 100, 5)  # Appelle la fonction jouer. a = 1 et b = 100 dans randint(a,b) et 5 le nombre d'essais possible
+jouer(1, 100, 5)  
