@@ -18,7 +18,6 @@ def messageindice(proposition, mystere, nb_essais_restants):  # Fonction aidant 
 
 def afficher(text):  # Fonction afficher
     print(text)
-    return
 
 
 def demander(mini, max, nb_essais_restants):  # Fonction demande le nombre mystère
